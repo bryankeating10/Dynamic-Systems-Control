@@ -1,6 +1,6 @@
 %{
 DESCRIPTION:
-    Calculates the gain of an electromotive system
+    Calculates the transfer function gain of an electromotive system
 INPUT:
     b: Viscous friction coefficient (kg*m*s)
     Ra: Armature resistance (Ohms)
