@@ -31,3 +31,25 @@ disp('Zeros: ');
 disp(z2);
 disp('Gain: ');
 disp(k2);
+
+% Cruise control example 3
+sysG3 = 100/(s^3+10.1*s^2+101*s);
+
+p3 = pole(sysG3);
+[z3,k3] = zero(sysG3);
+
+fprintf('\nExample 3\n');
+disp('Poles: ');
+disp(p3);
+disp('Zeros: ');
+disp(z3);
+disp('Gain')
+disp(k3)
+
+dist_3 = repmat("pole", 3, 1);
+disp(dist_3)
+figure;
+plotComplex(p3,dist_3)
+
+
+% Satelite transfer function example 4
