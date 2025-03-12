@@ -32,14 +32,14 @@ disp('Gain: ');
 disp(k2);
 
 % Satellite example 3
-sysG3 = 0.0002/s^2;
+sysS = 0.0002/s^2;
 t = 0:0.01:10;  % set up time vector with dt = 0.01 sec
 
 u1 = [zeros(1, 500),...
       25*ones(1, 10),...  % pulse of 25N, at 5 sec, for 0.1 sec duration
       zeros(1, length(t) - 500 - 10)];  % pulse input
 
-[y1] = lsim(sysG3, u1, t);   % linear simulation
+[y1] = lsim(sysS, u1, t);   % linear simulation
 ff = 180/pi;                  % conversion factor from radians to degrees
 y1 = ff * y1;                 % output in degrees
 figure;
@@ -69,9 +69,14 @@ disp(z3);
 disp('Gain: ');
 disp(k3);
 
-dist_3 = repmat("pole", 3, 1);
-disp(dist_3);
+poles_3 = repmat("pole", 3, 1);
+disp(poles_3);
 figure;
-plotComplex(p3, dist_3);
+plotComplex(p3, poles_3);
 
-% Satellite transfer function example 4
+% Plotting satellite poles and zeros
+poles_sat = repmat("pole",[size(pole(sysS))]);
+[z_sat,k_sat] = zero(sysS);
+zeros_sat = repmat("zero",[size(z_sat)]);
+figure(Name="First Sat Plot")
+plotComplex(pole(sysS),poles_sat)

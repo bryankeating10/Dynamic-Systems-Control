@@ -34,8 +34,11 @@ function plotComplex(z,m)
 
     buffer_x = 0.1 * real_range;  % 10% buffer for x-axis
     buffer_y = 0.1 * imag_range;  % 10% buffer for y-axis
-
-    xlim([real_min - buffer_x, real_max + buffer_x]);
-    ylim([imag_min - buffer_y, imag_max + buffer_y]);
+    if real_range ~= 0
+        xlim([real_min - buffer_x, real_max + buffer_x]);
+    end
+    if imag_range ~= 0
+        ylim([imag_min - buffer_y, imag_max + buffer_y]);
+    end
     xline(0, 'k--'); yline(0, 'k--');
 end
