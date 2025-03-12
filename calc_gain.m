@@ -2,12 +2,12 @@
 DESCRIPTION:
     Calculates the gain of an electromotive system
 INPUT:
-    b: Viscous friction coefficient
-    Ra: Armature resistance
+    b: Viscous friction coefficient (kg*m*s)
+    Ra: Armature resistance (Ohms)
     Kt: Torque constant
     Ke: Electric constant
 OUTPUT:
-    k: gain
+    k: Gain
 %}
 
 function k = calc_gain(b,Ra,Kt,Ke)
