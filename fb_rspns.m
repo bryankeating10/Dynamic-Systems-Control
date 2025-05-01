@@ -24,3 +24,15 @@ title('Closed-Loop Step Response with Output Gain')
 xlabel('Time (s)')
 ylabel('Output')
 grid on
+
+% Bode plot
+figure
+bode(T_final)
+title('Bode Plot of Closed-Loop System with Output Gain')
+xlabel('Frequency (rad/s)')
+ylabel('Magnitude (dB) / Phase (degrees)')
+grid on
+hold on
+bode(T)
+legend('With Output Gain', 'Without Output Gain')
+hold off
